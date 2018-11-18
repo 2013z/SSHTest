@@ -1,0 +1,413 @@
+
+Administrator@PC-20181117QGKP MINGW64 ~
+$ git config --global user.name "2013z"
+
+Administrator@PC-20181117QGKP MINGW64 ~
+$ git config --global user.email "121344429@qq.com"
+
+Administrator@PC-20181117QGKP MINGW64 ~
+$ cd d:\
+>
+
+Administrator@PC-20181117QGKP MINGW64 /d
+$ cd d:\Git
+
+Administrator@PC-20181117QGKP MINGW64 /d/Git
+$ .\Gitbank\
+>
+bash: .Gitbank: command not found
+
+Administrator@PC-20181117QGKP MINGW64 /d/Git
+$ \Gitbank
+bash: Gitbank: command not found
+
+Administrator@PC-20181117QGKP MINGW64 /d/Git
+$ cd .\Gitbank\
+>
+bash: cd: .Gitbank: No such file or directory
+
+Administrator@PC-20181117QGKP MINGW64 /d/Git
+$ cd Gitbank
+
+Administrator@PC-20181117QGKP MINGW64 /d/Git/Gitbank
+$ cd Test
+
+Administrator@PC-20181117QGKP MINGW64 /d/Git/Gitbank/Test (master)
+$ ssh-keygen -t rsa -C "121344429@qq.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/Administrator/.ssh/id_rsa):
+Created directory '/c/Users/Administrator/.ssh'.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/Administrator/.ssh/id_rsa.
+Your public key has been saved in /c/Users/Administrator/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:DxtGyV+O/i1Xlp/3ba6npJMZa13t9lwpVPTl/mOWNMc 121344429@qq.com
+The key's randomart image is:
++---[RSA 2048]----+
+|               ..|
+|       . .    ..o|
+|        +   .  .o|
+|       . . +  .o |
+|        S o .. oE|
+|       . *  o ..@|
+|        . o  B.@=|
+|           .B+*o@|
+|           .o++BX|
++----[SHA256]-----+
+
+Administrator@PC-20181117QGKP MINGW64 /d/Git/Gitbank/Test (master)
+$ git remote add origin https://github.com/2013z/SSHTest.git
+fatal: remote origin already exists.
+
+Administrator@PC-20181117QGKP MINGW64 /d/Git/Gitbank/Test (master)
+$ git push -u origin master
+Everything up-to-date
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+Administrator@PC-20181117QGKP MINGW64 /d/Git/Gitbank/Test (master)
+$ git clone https://github.com/2013z/SSHTest.git
+Cloning into 'SSHTest'...
+warning: You appear to have cloned an empty repository.
+
+Administrator@PC-20181117QGKP MINGW64 /d/Git/Gitbank/Test (master)
+$ cd SSHTest
+
+Administrator@PC-20181117QGKP MINGW64 /d/Git/Gitbank/Test/SSHTest (master)
+$ git push
+error: src refspec refs/heads/master does not match any.
+error: failed to push some refs to 'https://github.com/2013z/SSHTest.git'
+
+Administrator@PC-20181117QGKP MINGW64 /d/Git/Gitbank/Test/SSHTest (master)
+$ origin https://github.com/2013z/SSHTest.git (push)
+bash: syntax error near unexpected token `('
+
+Administrator@PC-20181117QGKP MINGW64 /d/Git/Gitbank/Test/SSHTest (master)
+$ git push -u origin master
+error: src refspec master does not match any.
+error: failed to push some refs to 'https://github.com/2013z/SSHTest.git'
+
+Administrator@PC-20181117QGKP MINGW64 /d/Git/Gitbank/Test/SSHTest (master)
+$ git push -u origin https://github.com/2013z/SSHTest.git
+fatal: remote part of refspec is not a valid name in https://github.com/2013z/SSHTest.git
+
+Administrator@PC-20181117QGKP MINGW64 /d/Git/Gitbank/Test/SSHTest (master)
+$ git push origin master
+error: src refspec master does not match any.
+error: failed to push some refs to 'https://github.com/2013z/SSHTest.git'
+
+Administrator@PC-20181117QGKP MINGW64 /d/Git/Gitbank/Test/SSHTest (master)
+$ git remote add origin https://github.com/2013z/SSHTest.git
+fatal: remote origin already exists.
+
+Administrator@PC-20181117QGKP MINGW64 /d/Git/Gitbank/Test/SSHTest (master)
+$ git push -u origin master
+error: src refspec master does not match any.
+error: failed to push some refs to 'https://github.com/2013z/SSHTest.git'
+
+Administrator@PC-20181117QGKP MINGW64 /d/Git/Gitbank/Test/SSHTest (master)
+$ git pull origin master
+fatal: Couldn't find remote ref master
+
+Administrator@PC-20181117QGKP MINGW64 /d/Git/Gitbank/Test/SSHTest (master)
+$ git commit -m
+error: switch `m' requires a value
+usage: git commit [<options>] [--] <pathspec>...
+
+    -q, --quiet           suppress summary after successful commit
+    -v, --verbose         show diff in commit message template
+
+Commit message options
+    -F, --file <file>     read message from file
+    --author <author>     override author for commit
+    --date <date>         override date for commit
+    -m, --message <message>
+                          commit message
+    -c, --reedit-message <commit>
+                          reuse and edit message from specified commit
+    -C, --reuse-message <commit>
+                          reuse message from specified commit
+    --fixup <commit>      use autosquash formatted message to fixup specified commit
+    --squash <commit>     use autosquash formatted message to squash specified commit
+    --reset-author        the commit is authored by me now (used with -C/-c/--amend)
+    -s, --signoff         add Signed-off-by:
+    -t, --template <file>
+                          use specified template file
+    -e, --edit            force edit of commit
+    --cleanup <default>   how to strip spaces and #comments from message
+    --status              include status in commit message template
+    -S, --gpg-sign[=<key-id>]
+                          GPG sign commit
+
+Commit contents options
+    -a, --all             commit all changed files
+    -i, --include         add specified files to index for commit
+    --interactive         interactively add files
+    -p, --patch           interactively add changes
+    -o, --only            commit only specified files
+    -n, --no-verify       bypass pre-commit and commit-msg hooks
+    --dry-run             show what would be committed
+    --short               show status concisely
+    --branch              show branch information
+    --ahead-behind        compute full ahead/behind values (EXPERIMENTAL)
+    --porcelain           machine-readable output
+    --long                show status in long format (default)
+    -z, --null            terminate entries with NUL
+    --amend               amend previous commit
+    --no-post-rewrite     bypass post-rewrite hook
+    -u, --untracked-files[=<mode>]
+                          show untracked files, optional modes: all, normal, no. (Default: all)
+
+
+Administrator@PC-20181117QGKP MINGW64 /d/Git/Gitbank/Test/SSHTest (master)
+$ git commit -m -a
+On branch master
+
+Initial commit
+
+Untracked files:
+        main.cpp
+
+nothing added to commit but untracked files present
+
+Administrator@PC-20181117QGKP MINGW64 /d/Git/Gitbank/Test/SSHTest (master)
+$ git commit -m -u
+On branch master
+
+Initial commit
+
+Untracked files:
+        main.cpp
+
+nothing added to commit but untracked files present
+
+Administrator@PC-20181117QGKP MINGW64 /d/Git/Gitbank/Test/SSHTest (master)
+$ git commit -u main.cpp
+error: pathspec 'main.cpp' did not match any file(s) known to git.
+
+Administrator@PC-20181117QGKP MINGW64 /d/Git/Gitbank/Test/SSHTest (master)
+$ git commit -u
+On branch master
+
+Initial commit
+
+Untracked files:
+        main.cpp
+
+nothing added to commit but untracked files present
+
+Administrator@PC-20181117QGKP MINGW64 /d/Git/Gitbank/Test/SSHTest (master)
+$ ^C
+
+Administrator@PC-20181117QGKP MINGW64 /d/Git/Gitbank/Test/SSHTest (master)
+$ git remote add origin http
+fatal: remote origin already exists.
+
+Administrator@PC-20181117QGKP MINGW64 /d/Git/Gitbank/Test/SSHTest (master)
+$ git push -u origin master
+error: src refspec master does not match any.
+error: failed to push some refs to 'https://github.com/2013z/SSHTest.git'
+
+Administrator@PC-20181117QGKP MINGW64 /d/Git/Gitbank/Test/SSHTest (master)
+$ git commit -m "新建一个maincpp"
+On branch master
+
+Initial commit
+
+Untracked files:
+        main.cpp
+
+nothing added to commit but untracked files present
+
+Administrator@PC-20181117QGKP MINGW64 /d/Git/Gitbank/Test/SSHTest (master)
+$ cat main.cpp
+#if defined(UNICODE) && !defined(_UNICODE)
+    #define _UNICODE
+#elif defined(_UNICODE) && !defined(UNICODE)
+    #define UNICODE
+#endif
+
+#include <tchar.h>
+#include <windows.h>
+#include "resource.h"
+
+/*  Declare Windows procedure  */
+LRESULT CALLBACK WindowProcedure (HWND, UINT, WPARAM, LPARAM);
+
+/*  Make the class name into a global variable  */
+TCHAR szClassName[ ] = _T("CodeBlocksWindowsApp");
+
+int WINAPI WinMain (HINSTANCE hThisInstance,
+                     HINSTANCE hPrevInstance,
+                     LPSTR lpszArgument,
+                     int nCmdShow)
+{
+    HWND hwnd;               /* This is the handle for our window */
+    MSG messages;            /* Here messages to the application are saved */
+    WNDCLASSEX wincl;        /* Data structure for the windowclass */
+
+    /* The Window structure */
+    wincl.hInstance = hThisInstance;
+    wincl.lpszClassName = szClassName;
+    wincl.lpfnWndProc = WindowProcedure;      /* This function is called by windows */
+    wincl.style = CS_DBLCLKS;                 /* Catch double-clicks */
+    wincl.cbSize = sizeof (WNDCLASSEX);
+
+    /* Use default icon and mouse-pointer */
+    wincl.hIcon = LoadIcon(GetModuleHandle(NULL), MAKEINTRESOURCE(IDI_MYICON));
+    wincl.hIconSm = (HICON)LoadImage(GetModuleHandle(NULL), MAKEINTRESOURCE(IDI_MYICON),IMAGE_ICON,16,16,0);
+    wincl.hCursor = LoadCursor (NULL, IDC_ARROW);
+    wincl.lpszMenuName = MAKEINTRESOURCE(IDR_MYMENU);                 /* No menu */
+    wincl.cbClsExtra = 0;                      /* No extra bytes after the window class */
+    wincl.cbWndExtra = 0;                      /* structure or the window instance */
+    /* Use Windows's default colour as the background of the window */
+    wincl.hbrBackground = (HBRUSH) 0/*COLOR_BACKGROUND*/;
+
+    /* Register the window class, and if it fails quit the program */
+    if (!RegisterClassEx (&wincl))
+        return 0;
+
+    /* The class is registered, let's create the program*/
+    hwnd = CreateWindowEx (
+           0,                   /* Extended possibilites for variation */
+           szClassName,         /* Classname */
+           _T("DNF"),       /* Title Text */
+           WS_OVERLAPPEDWINDOW, /* default window */
+           CW_USEDEFAULT,       /* Windows decides the position */
+           CW_USEDEFAULT,       /* where the window ends up on the screen */
+           544,                 /* The programs width */
+           375,                 /* and height in pixels */
+           HWND_DESKTOP,        /* The window is a child-window to desktop */
+           NULL,                /* No menu */
+           hThisInstance,       /* Program Instance handler */
+           NULL                 /* No Window Creation data */
+           );
+
+    if(hwnd == NULL)
+    {
+        MessageBox(NULL, "RegisterClassEx Failed!", "Error!", MB_OK|MB_ICONERROR);
+    }
+
+    /* Make the window visible on the screen */
+    ShowWindow (hwnd, nCmdShow);
+
+    /* Run the message loop. It will run until GetMessage() returns 0 */
+    while (GetMessage (&messages, NULL, 0, 0) > 0)
+    {
+        /* Translate virtual-key messages into character messages */
+        TranslateMessage(&messages);
+        /* Send message to WindowProcedure */
+        DispatchMessage(&messages);
+    }
+
+    /* The program return-value is 0 - The value that PostQuitMessage() gave */
+    return messages.wParam;
+}
+
+
+/*  This function is called by the Windows function DispatchMessage()  */
+
+LRESULT CALLBACK WindowProcedure (HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
+{
+
+    //while(1)
+    //{
+         switch (message)                  /* handle the messages */
+        {
+        case WM_LBUTTONDOWN:
+            {
+                char szFileName[MAX_PATH];
+                HINSTANCE hInstance = GetModuleHandle(NULL);
+                GetModuleFileName(hInstance,szFileName,MAX_PATH);
+                MessageBox(hwnd, szFileName, "Lu Jin:", MB_OK);
+            }
+            break;
+        case WM_KEYDOWN:
+            {
+                //GetDlgItem(hwnd);
+                //HINSTANCE hInstance = NULL;
+                //HICON hMyIcon = LoadIcon(hInstance,MAKEINTRESOURCE(IDI_MYICON));
+
+            }
+            break;
+        case WM_COMMAND:
+            switch(LOWORD(wParam))
+            {
+            case ID_FILE_EXIT:
+                {
+                    MessageBox(hwnd,"提示","退出",MB_OK);
+                }
+                break;
+            case ID_STUFF_GO:
+                {
+                    PostMessage(hwnd,WM_CLOSE,0,0);
+                }
+                break;
+            default:
+                return DefWindowProc(hwnd,message,wParam,lParam);
+            }
+        case WM_CLOSE:
+            DestroyWindow(hwnd);
+            break;
+
+        case WM_DESTROY:
+            PostQuitMessage (0);       /* send a WM_QUIT to the message queue */
+            break;
+
+        default:                      /* for messages that we don't deal with */
+            return DefWindowProc (hwnd, message, wParam, lParam);
+        }
+
+    //}
+
+    return 0;
+}
+
+BOOL CALLBACK AboutDlgProc(HWND hwnd,UINT Message,WPARAM wParam,LPARAM lParam)
+{
+    switch(Message)
+    {
+    case WM_INITDIALOG:
+        return TRUE;
+    case WM_COMMAND:
+        switch(LOWORD(wParam))
+        {
+        case IDOK:
+            EndDialog(hwnd,IDOK);
+            break;
+        case IDCANCEL:
+            EndDialog(hwnd,IDCANCEL);
+            break;
+        }
+        break;
+    default:
+        return FALSE;
+    }
+
+
+    return TRUE;
+}
+
+Administrator@PC-20181117QGKP MINGW64 /d/Git/Gitbank/Test/SSHTest (master)
+$ git add main.cpp
+
+Administrator@PC-20181117QGKP MINGW64 /d/Git/Gitbank/Test/SSHTest (master)
+$ git commit -m "新建一个maincpp"
+[master (root-commit) 27f67d1] 新建一个maincpp
+ 1 file changed, 166 insertions(+)
+ create mode 100644 main.cpp
+
+Administrator@PC-20181117QGKP MINGW64 /d/Git/Gitbank/Test/SSHTest (master)
+$ git push -u origin master
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 2.14 KiB | 2.14 MiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+remote:
+remote: Create a pull request for 'master' on GitHub by visiting:
+remote:      https://github.com/2013z/SSHTest/pull/new/master
+remote:
+To https://github.com/2013z/SSHTest.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
